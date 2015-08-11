@@ -6,6 +6,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://displaytag.sf.net" prefix="display" %>
 <%@taglib tagdir="/WEB-INF/tags" prefix="caelum" %>
 <jsp:useBean id="dao" class="br.com.caelum.jdbc.ContatoDao"/>
     
@@ -19,7 +20,7 @@
 </head>
 <body>
 <h1>Bem vindo</h1>
- 
+
 <table>
   <!-- percorre contatos montando as linhas da tabela -->
   <c:forEach var="contato" items="${dao.lista}">
