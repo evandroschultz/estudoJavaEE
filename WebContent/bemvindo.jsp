@@ -21,18 +21,20 @@
 <body>
 <h1>Bem vindo</h1>
 
-<table>
-  <!-- percorre contatos montando as linhas da tabela -->
-  <c:forEach var="contato" items="${dao.lista}">
-    <tr>
-      <td>${contato.nome}</td>
-      <td>${contato.email}</td>
-      <td>${contato.endereco}</td>
-      <td><fmt:formatDate value="${contato.dataNascimento.time}"
-    pattern="dd/MM/yyyy" /></td>
-    </tr>
-  </c:forEach><br>  
-</table>
+<% 
+
+request.setAttribute( "test", dao.getLista() ); 
+%>
+
+<display:table name="test">
+<display:caption>Pessoas</display:caption>
+<display:column property="nome" title="Nome" />
+<display:column property="endereco" title="Endereço" />
+ <display:column property="id" title="ID" href="details.jsp" paramId="id" />  
+</display:table>
+
+
+
 		
 <caelum:campoData id="dtNascimento" label="teste"></caelum:campoData>
 </body>
